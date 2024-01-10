@@ -19,18 +19,6 @@ public class Movementscript : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        if (isGrounded == false)
-        {
-            rb.bodyType = RigidbodyType2D.Dynamic;
-        }
-        else if (isGrounded == true)
-        {
-            rb.bodyType = RigidbodyType2D.Kinematic;
-        }
-    }
-
 
     void FixedUpdate()
     {
@@ -46,7 +34,6 @@ public class Movementscript : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && isGrounded || Input.GetKey(KeyCode.W) && isGrounded)
 
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
         }
@@ -62,4 +49,14 @@ public class Movementscript : MonoBehaviour
             Debug.Log("Ground Hit");
         }
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            Debug.Log("Ground Hit");
+        }
+    }
+
 }
