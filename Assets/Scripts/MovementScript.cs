@@ -11,6 +11,9 @@ public class Movementscript : MonoBehaviour
 
     public bool isGrounded;
 
+    public float jumpDelay = 1.0f;
+    public float timeSinceLastJump = 0.0f;
+
 
     void Start()
     {
@@ -19,6 +22,10 @@ public class Movementscript : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        timeSinceLastJump += Time.deltaTime;
+    }
 
     void FixedUpdate()
     {
@@ -31,11 +38,12 @@ public class Movementscript : MonoBehaviour
             transform.position += new Vector3(-speed, 0);
         }
 
-        if (Input.GetKey(KeyCode.Space) && isGrounded || Input.GetKey(KeyCode.W) && isGrounded)
-
+        if (Input.GetKey(KeyCode.Space) && isGrounded && timeSinceLastJump >= jumpDelay || Input.GetKey(KeyCode.W) && isGrounded && timeSinceLastJump >= jumpDelay) 
         {
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
+
+            timeSinceLastJump = 0.0f;
         }
     }
 
