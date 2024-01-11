@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public float life = 3;
+    public float life = 40.0f;
     public GameObject bulletPrefab;
 
     private bool hasCollided = false;
@@ -33,7 +33,7 @@ public class Arrow : MonoBehaviour
         {
             transform.parent = collision.transform;
 
-            col.enabled = false;
+            col.enabled = true;
 
             rb.isKinematic = true;
 
