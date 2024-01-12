@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class ButtonUI : MonoBehaviour  
+public class ButtonUI3 : MonoBehaviour  
 {
+
     [SerializeField]
-    private string NewGameLevel = "Level1";
+    private string NewGameLevel3 = "MainMenugustav";
 
     public void NewGameButton()
     {
-        SceneManager.LoadScene(NewGameLevel);        
+        SceneManager.LoadScene(NewGameLevel3);        
     }
 }
