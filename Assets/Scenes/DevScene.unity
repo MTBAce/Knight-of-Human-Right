@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 261494574}
   - component: {fileID: 261494575}
+  - component: {fileID: 261494576}
   m_Layer: 0
   m_Name: Armpivot
   m_TagString: Untagged
@@ -164,12 +165,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261494573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ea91ab966f82af4285f4b729c70c83e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myPlayer: {fileID: 842177580}
+--- !u!114 &261494576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261494573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75950b30f37fa4048bd8f60bb5152c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovementScript: {fileID: 842177581}
 --- !u!1 &506294601
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +784,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215906812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d95cbc050b75784caf72fa3048f7cde, type: 3}
   m_Name: 
