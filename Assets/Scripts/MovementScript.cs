@@ -24,14 +24,12 @@ public class Movementscript : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
+
         if (mousePos.x<transform.position.x && !isFacingRight)
         {
             Flip();
         }
         else if (mousePos.x > transform.position.x && isFacingRight)
-        {
-            Flip();
-        }
 
     }
     
@@ -47,6 +45,7 @@ public class Movementscript : MonoBehaviour
     private void Flip()
     {
         isFacingRight = !isFacingRight;
+
         transform.Rotate(0, 180, 0);
     }
     
