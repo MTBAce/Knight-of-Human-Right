@@ -28,7 +28,7 @@ public class FIendeSkottScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 10)
+        if (timer > 1)
         {
             Destroy(gameObject);
         }
