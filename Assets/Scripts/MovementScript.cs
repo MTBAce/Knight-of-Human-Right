@@ -16,20 +16,20 @@ public class Movementscript : MonoBehaviour
 
     private void Update()
     {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         horizontal = Input.GetAxisRaw("Horizontal");
         if(Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-        if (horizontal < 0 && !isFacingRight)
+
+        if (mousePos.x<transform.position.x && !isFacingRight)
         {
             Flip();
         }
-        else if (horizontal > 0 && isFacingRight)
-        {
-            Flip();
-        }
+        else if (mousePos.x > transform.position.x && isFacingRight)
 
     }
     
@@ -45,9 +45,8 @@ public class Movementscript : MonoBehaviour
     private void Flip()
     {
         isFacingRight = !isFacingRight;
-        Vector3 scaler = transform.localScale;
-        scaler.x *= -1;
-        transform.localScale = scaler;
+
+        transform.Rotate(0, 180, 0);
     }
     
 }

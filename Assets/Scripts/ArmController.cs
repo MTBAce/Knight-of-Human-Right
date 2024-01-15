@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ArmController : MonoBehaviour
 {
-
     public Movementscript playerMovementScript;
 
     void Update()
@@ -16,14 +15,18 @@ public class ArmController : MonoBehaviour
         Vector3 difference = mousePosition - armPosition;
         difference.Normalize();
 
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        float rotationZ = Mathf.Atan2(-difference.y, difference.x) * Mathf.Rad2Deg;
 
         if (playerMovementScript.isFacingRight)
         {
-            
-            rotationZ = Mathf.Atan2(difference.y, -difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(180f, 0f, rotationZ);
+        }
+        else
+        {
+            // When facing left, we need to adjust the rotation and potentially flip the arm sprite
+            rotationZ = Mathf.Atan2(-difference.y, -difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(180f, 180f, rotationZ); // Flip the arm by rotating around the y-axis
         }
 
-        transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
     }
 }

@@ -33,7 +33,7 @@ public class Arrow : MonoBehaviour
         {
             transform.parent = collision.transform;
 
-            col.enabled = true;
+            col.enabled = false;
 
             rb.isKinematic = true;
 
