@@ -25,11 +25,14 @@ public class Movementscript : MonoBehaviour
         }
 
 
-        if (mousePos.x<transform.position.x && !isFacingRight)
+        if (mousePos.x < transform.position.x && !isFacingRight)
         {
             Flip();
         }
         else if (mousePos.x > transform.position.x && isFacingRight)
+        {
+            Flip();
+        }
 
     }
     
