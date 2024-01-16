@@ -14,6 +14,8 @@ public class Arrow : MonoBehaviour
 
     Rigidbody2D rb;
 
+    // Change to prefered damage amount.
+    public int damage = 10;
 
     private void Start()
     {
@@ -31,6 +33,20 @@ public class Arrow : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
+            
+            // Get the Enemy script attached to the collided object and call TakeDamage
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+
+            Destroy(gameObject);
+        }
+        /*
+
+        if (collision.gameObject.tag == "Enemy")
+        {
             Destroy(gameObject);
 
         }
@@ -45,5 +61,6 @@ public class Arrow : MonoBehaviour
 
             hasCollided = true;
         }
+    */
     }
 }
