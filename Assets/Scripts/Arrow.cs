@@ -5,29 +5,22 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public float life = 40.0f;
-    public GameObject bulletPrefab;
 
-    private bool hasCollided = false;
-    private Collider2D col;
+    public GameObject bulletPrefab;
 
     Rigidbody2D rb;
 
+    public float bulletDamage;
 
     private void Start()
     {
        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
     }
 
-    void Awake()
-    {
-        Destroy(gameObject, life);
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter(Collision collision)
     {
 
+<<<<<<< Updated upstream
 
         if(!hasCollided && collision.gameObject.tag != "Player" )
         {
@@ -38,6 +31,19 @@ public class Arrow : MonoBehaviour
             rb.isKinematic = true;
 
             hasCollided = true;
+=======
+        Debug.Log("Hit");
+        GameObject otherGameObject = collision.gameObject;
+        enemyScript hitEnemy = otherGameObject.GetComponent<enemyScript>();
+
+        if (hitEnemy != null)
+        {
+            Debug.Log("Enemy Hit");
+            hitEnemy.TakeDamage();
+            Destroy(gameObject);
+>>>>>>> Stashed changes
         }
     }
+
+
 }

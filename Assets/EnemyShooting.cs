@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyShooting : MonoBehaviour
 {
 
-    public GameObject FiendeSkott;
-    public Transform SkottPos;
+    public GameObject enemyArrow;
+    public Transform firePoint;
     private GameObject player; 
 
     private float timer;
@@ -38,7 +38,7 @@ public class EnemyShooting : MonoBehaviour
         
     void shoot()
     {
-        Instantiate(FiendeSkott, SkottPos.position, Quaternion.identity);
+        Instantiate(enemyArrow, firePoint.position, Quaternion.identity);
     }
 
 }
