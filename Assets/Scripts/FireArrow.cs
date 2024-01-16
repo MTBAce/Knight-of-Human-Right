@@ -5,7 +5,6 @@ public class FireArrow : MonoBehaviour
     public Transform arrowSpawn;
     public GameObject BulletPrefab;
     public float arrowSpeed = 10;
-
     public float shootDelay = 1.0f;
     public float timeSinceLastShoot = 0.0f;
 
