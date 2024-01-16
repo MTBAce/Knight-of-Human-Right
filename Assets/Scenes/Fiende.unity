@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6c56a04c65d2140963eec3b7254ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  Target: {fileID: 973790479}
 --- !u!1 &967498876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,6 +2119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1011160355}
   - component: {fileID: 1011160357}
+  - component: {fileID: 1011160359}
   - component: {fileID: 1011160356}
   - component: {fileID: 1011160358}
   m_Layer: 0
@@ -2267,7 +2268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 082ef9ed7b0b804419e41289cf3be03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
+
   health: 30
+
 --- !u!1 &1238007201
 GameObject:
   m_ObjectHideFlags: 0

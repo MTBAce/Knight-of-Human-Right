@@ -15,6 +15,8 @@ public class Arrow : MonoBehaviour
     Rigidbody2D rb;
 
     // Change to prefered damage amount.
+
+
     public int damage = 10;
 
     private void Start()
