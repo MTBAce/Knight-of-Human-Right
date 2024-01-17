@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Alexis och Elliott
+
 public class EnemyShooting : MonoBehaviour
 {
 
-    public GameObject FiendeSkott;
-    public Transform SkottPos;
-    private GameObject player; 
+    public GameObject EnemyArrow;
+    public Transform FirePoint;
+    private GameObject player;
+
+    private bool isFacingRight;
 
     private float timer;
     // Start is called before the first frame update
@@ -19,11 +23,9 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-
         float distance = Vector2.Distance(transform.position, player.transform.position);
         Debug.Log(distance);
-        if(distance < 20)
+        if(distance < 9)
         {
             timer += Time.deltaTime;
 
@@ -34,11 +36,20 @@ public class EnemyShooting : MonoBehaviour
             }
         }
 
+
+
     }
         
     void shoot()
     {
-        Instantiate(FiendeSkott, SkottPos.position, Quaternion.identity);
+        Instantiate(EnemyArrow, FirePoint.position, Quaternion.identity);
+    }
+
+    void Flip()
+    {
+        isFacingRight= !isFacingRight;
+        transform.Rotate(0, 180, 0);
+
     }
 
 }

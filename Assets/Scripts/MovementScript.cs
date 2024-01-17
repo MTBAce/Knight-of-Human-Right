@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+//Elliott
+
 public class Movementscript : MonoBehaviour
 {
     private float horizontal;
     public float jumpingPower = 10;
     public float speed = 0f;
     public bool isFacingRight = true;
+
+    public bool isJumping;
 
     public Animator animator;
 
@@ -29,11 +33,20 @@ public class Movementscript : MonoBehaviour
         
         if(Input.GetButtonDown("Jump") && isGrounded())
         {
-            
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            isJumping = true;
+
         }
 
-
+        if(isJumping == true)
+        {
+            animator.SetBool("isJumping", true);
+        }
+        else if (isJumping == false)
+        {
+            animator.SetBool("isJumping", false);
+        }
+        
         if (mousePos.x < transform.position.x && !isFacingRight)
         {
             Flip();
@@ -45,8 +58,9 @@ public class Movementscript : MonoBehaviour
 
     }
     
-    private bool isGrounded()
+    public bool isGrounded()
     {
+        isJumping=false;
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 

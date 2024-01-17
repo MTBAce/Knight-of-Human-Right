@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Elliott
+
 public class Pivot : MonoBehaviour
 {
     public GameObject myPlayer;
