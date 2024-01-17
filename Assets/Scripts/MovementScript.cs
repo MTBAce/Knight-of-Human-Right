@@ -10,17 +10,26 @@ public class Movementscript : MonoBehaviour
     public float speed = 0f;
     public bool isFacingRight = true;
 
+    public Animator animator;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    private void Start()
+    {
+        GetComponent<Animator>();
+    }
+
     private void Update()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        horizontal = Input.GetAxisRaw("Horizontal"); 
         
-        horizontal = Input.GetAxisRaw("Horizontal");
         if(Input.GetButtonDown("Jump") && isGrounded())
         {
+            
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
@@ -44,6 +53,19 @@ public class Movementscript : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        if (horizontal <0 || horizontal >0)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(horizontal));
+        }
+
+        if (horizontal == 0)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(0));
+        }
+        
+
+
+
     }
     private void Flip()
     {

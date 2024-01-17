@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Arrow : MonoBehaviour
@@ -11,6 +12,7 @@ public class Arrow : MonoBehaviour
 
     private bool hasCollided = false;
     private Collider2D col;
+    private RigidbodyConstraints2D constraints;
 
     Rigidbody2D rb;
 
@@ -22,13 +24,16 @@ public class Arrow : MonoBehaviour
     private void Start()
     {
        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
+       col = GetComponent<Collider2D>();
+        
     }
 
     void Awake()
     {
         Destroy(gameObject, life);
     }
+
+   
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -45,24 +50,17 @@ public class Arrow : MonoBehaviour
 
             Destroy(gameObject);
         }
-        /*
-
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-
-        }
+       
 
         if(!hasCollided && collision.gameObject.tag != "Player" )
         {
-            transform.parent = collision.transform;
-
-            col.enabled = false;
-
-            rb.isKinematic = true;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
             hasCollided = true;
+
+            col.enabled = false;
+            
         }
-    */
+    
     }
 }
