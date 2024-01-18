@@ -8,7 +8,11 @@ public class playerHealth : MonoBehaviour
 {
     public Animator animator;
 
+
     public bool isPlayerAlive = true;
+
+
+    public GameObject Deathscreen;
 
     public int health = 30;
     // Start is called before the first frame update
@@ -34,8 +38,11 @@ public class playerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player died");
+
         isPlayerAlive = false;
         animator.SetTrigger("death");
+        Deathscreen.SetActive(true);
+
     }
 
 }
