@@ -24037,6 +24037,7 @@ MonoBehaviour:
   NewGameLevel0: MainMenu
   NewGameLevel3: MainMenu
   NewGameLevel4: Level4
+  NewGameLevel5: Intro
 --- !u!4 &1767811238
 Transform:
   m_ObjectHideFlags: 0

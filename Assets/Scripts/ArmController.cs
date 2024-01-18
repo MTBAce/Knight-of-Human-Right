@@ -9,6 +9,15 @@ public class ArmController : MonoBehaviour
     public Movementscript playerMovementScript;
     public float maxRotation = 80f;
 
+    public GameObject player;
+
+    public playerHealth playerHealth;
+
+
+    private void Start()
+    {
+        playerHealth = player.GetComponent<playerHealth>();
+    }
     void Update()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -30,6 +39,11 @@ public class ArmController : MonoBehaviour
             rotationZ = Mathf.Atan2(-difference.y, -difference.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(180f, 180f, rotationZ); // Flip the arm by rotating around the y-axis
           
+        }
+
+        if (!playerHealth.isPlayerAlive)
+        {
+            Destroy(gameObject);
         }
 
 

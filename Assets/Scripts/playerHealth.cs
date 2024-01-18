@@ -8,10 +8,7 @@ public class playerHealth : MonoBehaviour
 {
     public Animator animator;
 
-
     public bool isPlayerAlive = true;
-
-
     public GameObject Deathscreen;
 
     public int health = 30;
@@ -25,6 +22,7 @@ public class playerHealth : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+      
     }
     public void TakeDamage(int damage)
     {
@@ -42,7 +40,16 @@ public class playerHealth : MonoBehaviour
         isPlayerAlive = false;
         animator.SetTrigger("death");
         Deathscreen.SetActive(true);
+        StartCoroutine(DieCoroutine());
 
     }
+
+    IEnumerator DieCoroutine()
+    {
+        yield return new WaitForSeconds(1.1f);
+
+        Time.timeScale = 0f;
+    }
+
 
 }
