@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1136443407628688105}
   m_Layer: 0
   m_Name: Enemy Arrow
-  m_TagString: Untagged
+  m_TagString: EnemyArrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,4 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  force: 0
+  force: 18

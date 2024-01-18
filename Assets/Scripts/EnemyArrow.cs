@@ -16,6 +16,8 @@ public class EnemyArrow : MonoBehaviour
 
     private Collider2D col;
 
+    public int damage = 10;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,9 +52,22 @@ public class EnemyArrow : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    /*private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!hasCollided && collision.gameObject.tag != "Player" && collision.gameObject.tag != "Enemy")
+        if (collision.gameObject.tag == "Player")
+        {
+            playerHealth player = collision.gameObject.GetComponent<playerHealth>();
+            if (player != null)
+            {
+                player.TakeDamage(damage);
+            }
+        }
+        
+        
+        
+        
+        if (!hasCollided && collision.gameObject.tag != "Player" && collision.gameObject.tag !="Enemy" && collision.gameObject.tag != "PlayerArrow")
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
@@ -61,8 +76,7 @@ public class EnemyArrow : MonoBehaviour
             col.enabled = false;
 
         }
-     } */
-
+    }
 
 
 }

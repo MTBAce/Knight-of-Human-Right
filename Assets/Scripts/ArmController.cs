@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Elliott
+//Elliott med hjälp av Hampus CS 
 
 public class ArmController : MonoBehaviour
 {

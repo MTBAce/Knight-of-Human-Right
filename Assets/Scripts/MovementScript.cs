@@ -87,5 +87,18 @@ public class Movementscript : MonoBehaviour
 
         transform.Rotate(0, 180, 0);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("Ground Hit");
+            isJumping = false;
+            animator.SetBool("isJumping", false);
+
+        }
+    }
+    
+    
     
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 336066318277987747}
   m_Layer: 7
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: PlayerArrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 40
   bulletPrefab: {fileID: 5288013123205516826}
+  damage: 10

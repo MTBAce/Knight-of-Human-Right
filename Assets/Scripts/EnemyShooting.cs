@@ -11,7 +11,7 @@ public class EnemyShooting : MonoBehaviour
     public Transform FirePoint;
     private GameObject player;
 
-    private bool isFacingRight;
+    private bool isFacingRight = false;
 
     private float timer;
     // Start is called before the first frame update
@@ -24,20 +24,23 @@ public class EnemyShooting : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log(distance);
-        if(distance < 9)
+        if(distance < 14)
         {
             timer += Time.deltaTime;
 
-            if (timer > 2)
+            if (timer > 1.8)
             {
                 timer = 0;
                 shoot();
             }
         }
 
-
-
+        if((player.transform.position.x > transform.position.x && !isFacingRight) || (player.transform.position.x < transform.position.x && isFacingRight))
+        {
+            Flip();
+        }
+                
+    
     }
         
     void shoot()

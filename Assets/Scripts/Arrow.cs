@@ -20,7 +20,6 @@ public class Arrow : MonoBehaviour
 
     // Change to prefered damage amount.
 
-
     public int damage = 10;
 
     private void Start()
@@ -44,7 +43,7 @@ public class Arrow : MonoBehaviour
         {
             
             // Get the Enemy script attached to the collided object and call TakeDamage
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
@@ -54,7 +53,7 @@ public class Arrow : MonoBehaviour
         }
        
 
-        if(!hasCollided && collision.gameObject.tag != "Player" )
+        if(!hasCollided && collision.gameObject.tag != "Player" && collision.gameObject.tag != "EnemyArrow")
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
