@@ -11,6 +11,11 @@ public class EnemyShooting : MonoBehaviour
     public Transform FirePoint;
     private GameObject player;
 
+    public playerHealth playerHealth;
+
+
+
+
     private bool isFacingRight = false;
 
     private float timer;
@@ -18,13 +23,15 @@ public class EnemyShooting : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<playerHealth>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        if(distance < 14)
+        if(distance < 14 && playerHealth.isPlayerAlive)
         {
             timer += Time.deltaTime;
 

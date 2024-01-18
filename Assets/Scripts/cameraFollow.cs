@@ -7,7 +7,7 @@ public class cameraFollow : MonoBehaviour
 {
 
     public Vector3 offset = new Vector3 (0, 4, -10f);
-    private float smoothTime = 0.25f;
+    public float smoothTime = 0.25f;
     private Vector3 velocity = Vector3.zero;
 
     // To fix bug when player dies

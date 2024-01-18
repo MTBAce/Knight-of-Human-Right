@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 7
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -192,7 +192,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -231,6 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyArrow: {fileID: 2898428327818340108, guid: d42ebf743336fa047a8cb56acb4ee28e, type: 3}
   FirePoint: {fileID: 1628893627216299105}
+  playerHealth: {fileID: 0}
 --- !u!61 &3843189608959274834
 BoxCollider2D:
   m_ObjectHideFlags: 0
