@@ -14,6 +14,8 @@ public class EnemyShooting : MonoBehaviour
     public playerHealth playerHealth;
     public EnemyHealth enemyHealth;
 
+    public float shootDist = 0; //Change in inspector
+
 
 
 
@@ -33,7 +35,7 @@ public class EnemyShooting : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        if(distance < 14 && playerHealth.isPlayerAlive && enemyHealth.isEnemyAlive == true)
+        if(distance < shootDist && playerHealth.isPlayerAlive && enemyHealth.isEnemyAlive == true)
         {
             timer += Time.deltaTime;
 

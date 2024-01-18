@@ -341,7 +341,13 @@ MonoBehaviour:
   animator: {fileID: 3446450796462361918}
   isPlayerAlive: 1
   Deathscreen: {fileID: 0}
-  health: 50
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  health: 5
 --- !u!114 &5334537183084637181
 MonoBehaviour:
   m_ObjectHideFlags: 0

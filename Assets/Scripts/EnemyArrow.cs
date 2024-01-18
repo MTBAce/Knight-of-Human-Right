@@ -45,14 +45,6 @@ public class EnemyArrow : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -62,6 +54,8 @@ public class EnemyArrow : MonoBehaviour
             {
                 player.TakeDamage(damage);
             }
+
+            Destroy(gameObject);
         }
         
         

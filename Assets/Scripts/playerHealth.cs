@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 
@@ -10,6 +11,9 @@ public class playerHealth : MonoBehaviour
 
     public bool isPlayerAlive = true;
     public GameObject Deathscreen;
+
+    public GameObject[] hearts;
+
 
     public int health = 5;
     // Start is called before the first frame update 
@@ -28,6 +32,8 @@ public class playerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        hearts[health].SetActive(false);
+
         if (health<=0)
         {
             Die();
