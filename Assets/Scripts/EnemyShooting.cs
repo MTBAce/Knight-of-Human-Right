@@ -12,6 +12,7 @@ public class EnemyShooting : MonoBehaviour
     private GameObject player;
 
     public playerHealth playerHealth;
+    public EnemyHealth enemyHealth;
 
 
 
@@ -24,6 +25,7 @@ public class EnemyShooting : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<playerHealth>();
+        enemyHealth = enemyHealth.GetComponent<EnemyHealth>();
 
     }
 
@@ -31,7 +33,7 @@ public class EnemyShooting : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        if(distance < 14 && playerHealth.isPlayerAlive)
+        if(distance < 14 && playerHealth.isPlayerAlive && enemyHealth.isEnemyAlive == true)
         {
             timer += Time.deltaTime;
 

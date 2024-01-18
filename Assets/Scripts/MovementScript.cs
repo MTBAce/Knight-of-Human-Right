@@ -12,6 +12,10 @@ public class Movementscript : MonoBehaviour
     public float speed = 0f;
     public bool isFacingRight = true;
 
+    public GameObject player;
+
+    public playerHealth playerHealth;
+
     public bool isJumping;
 
     public Animator animator;
@@ -20,41 +24,47 @@ public class Movementscript : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-    private void Start()
+    public void Start()
     {
         GetComponent<Animator>();
+        playerHealth = player.GetComponent<playerHealth>();
     }
 
-    private void Update()
+     void Update()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        horizontal = Input.GetAxisRaw("Horizontal"); 
         
-        if(Input.GetButtonDown("Jump") && isGrounded())
+        if (playerHealth.isPlayerAlive == true)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            isJumping = true;
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        }
+            horizontal = Input.GetAxisRaw("Horizontal");
 
-        if(isJumping == true)
-        {
-            animator.SetBool("isJumping", true);
-        }
-        else if (isJumping == false)
-        {
-            animator.SetBool("isJumping", false);
+            if (Input.GetButtonDown("Jump") && isGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                isJumping = true;
+
+            }
+
+            if (isJumping == true)
+            {
+                animator.SetBool("isJumping", true);
+            }
+            else if (isJumping == false)
+            {
+                animator.SetBool("isJumping", false);
+            }
+
+            if (mousePos.x < transform.position.x && !isFacingRight)
+            {
+                Flip();
+            }
+            else if (mousePos.x > transform.position.x && isFacingRight)
+            {
+                Flip();
+            }
         }
         
-        if (mousePos.x < transform.position.x && !isFacingRight)
-        {
-            Flip();
-        }
-        else if (mousePos.x > transform.position.x && isFacingRight)
-        {
-            Flip();
-        }
 
     }
     
@@ -64,22 +74,23 @@ public class Movementscript : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private void FixedUpdate()
+     void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        if (horizontal <0 || horizontal >0)
+       if(playerHealth.isPlayerAlive == true)
         {
-            animator.SetFloat("Speed", Mathf.Abs(horizontal));
-        }
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
-        if (horizontal == 0)
-        {
-            animator.SetFloat("Speed", Mathf.Abs(0));
+            if (horizontal < 0 || horizontal > 0)
+            {
+                animator.SetFloat("Speed", Mathf.Abs(horizontal));
+            }
+
+            if (horizontal == 0)
+            {
+                animator.SetFloat("Speed", Mathf.Abs(0));
+            }
         }
         
-
-
-
     }
     private void Flip()
     {

@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6132933400699712951, guid: 21c1ad761a29f114893ad2cca9ea7d75, type: 3}
   force: 18
-  damage: 10
+  damage: 1

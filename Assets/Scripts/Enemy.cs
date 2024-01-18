@@ -10,9 +10,22 @@ public class EnemyHealth : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
 
+    public bool isEnemyAlive = true;
+
+    Animator animator;
+
     private bool hasCollided = false;
 
-    // Method to call when the enemy gets hit
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    public bool IsEnemyAlive()
+    {
+        return isEnemyAlive;
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -25,9 +38,18 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        // Implement death logic here
+
+        isEnemyAlive = false;
+        animator.SetTrigger("death");
+        StartCoroutine(DieCoroutine());
+ 
+    }
+
+    IEnumerator DieCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+
         Destroy(gameObject);
     }
 
-   
 }

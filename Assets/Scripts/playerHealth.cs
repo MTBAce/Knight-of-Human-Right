@@ -11,8 +11,8 @@ public class playerHealth : MonoBehaviour
     public bool isPlayerAlive = true;
     public GameObject Deathscreen;
 
-    public int health = 30;
-    // Start is called before the first frame update
+    public int health = 5;
+    // Start is called before the first frame update 
 
     public bool IsPlayerAlive()
     {
@@ -21,6 +21,7 @@ public class playerHealth : MonoBehaviour
     
     private void Start()
     {
+        Time.timeScale = 1f;
         animator = GetComponent<Animator>();
       
     }
