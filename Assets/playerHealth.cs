@@ -7,7 +7,7 @@ using UnityEngine;
 public class playerHealth : MonoBehaviour
 {
 
-
+    public GameObject Deathscreen;
     public int health = 30;
     // Start is called before the first frame update
     public void TakeDamage(int damage)
@@ -22,6 +22,7 @@ public class playerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player died");
+        Deathscreen.SetActive(true);
     }
 
 }
