@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpingPower: 10
-  speed: 5
+  speed: 8
   isFacingRight: 0
   isJumping: 0
   animator: {fileID: 3446450796462361918}
