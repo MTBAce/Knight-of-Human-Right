@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3446450796462361918}
   isPlayerAlive: 1
-  Deathscreen: {fileID: 0}
+  Deathscreen: {fileID: 804038200132206293, guid: a6eaee5b384c88c4594bb5743097a764, type: 3}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
