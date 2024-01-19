@@ -8008,8 +8008,8 @@ GameObject:
   - component: {fileID: 1636148587}
   - component: {fileID: 1636148589}
   - component: {fileID: 1636148588}
-  - component: {fileID: 1636148590}
   - component: {fileID: 1636148591}
+  - component: {fileID: 1636148590}
   m_Layer: 7
   m_Name: Tilemap
   m_TagString: Ground
