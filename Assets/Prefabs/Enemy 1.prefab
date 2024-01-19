@@ -195,7 +195,7 @@ MonoBehaviour:
   FirePoint: {fileID: 811817549763469595}
   playerHealth: {fileID: 0}
   enemyHealth: {fileID: 7818485532315669938}
-  shootDist: 17
+  shootDist: 20
 --- !u!95 &5759782749922319290
 Animator:
   serializedVersion: 5
