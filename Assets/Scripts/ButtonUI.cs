@@ -8,7 +8,7 @@ public class ButtonUI : MonoBehaviour
 {
 
     [SerializeField]
-    private string NewGameLevel = "Level1", NewGameLevel2 = "Level2", NewGameLevel0 = "MainMenu", NewGameLevel3 = "Level3", NewGameLevel4 = "Level4", NewGameLevel5 = "Intro";
+    private string NewGameLevel = "Level1", NewGameLevel2 = "Level2", NewGameLevel0 = "MainMenu", NewGameLevel3 = "Level3", NewGameLevel4 = "Level4", NewGameLevel5 = "Intro", NewGameLevel6 = "WinScreen";
 
 
     public void Restart()
@@ -41,5 +41,9 @@ public class ButtonUI : MonoBehaviour
     public void NewGameButton5()
     {
         SceneManager.LoadScene(NewGameLevel5);
+    }
+    public void NewGameButton6()
+    {
+        SceneManager.LoadScene(NewGameLevel6);
     }
 }
