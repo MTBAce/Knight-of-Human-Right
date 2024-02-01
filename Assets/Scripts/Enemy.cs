@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 //Alexis
@@ -9,6 +10,8 @@ public class EnemyHealth : MonoBehaviour
     public int health = 100;
     Rigidbody2D rb;
     Collider2D col;
+
+    public GameObject deathParticle;
 
     public bool isEnemyAlive = true;
 
@@ -30,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= damage;
 
+        Instantiate(deathParticle, gameObject.transform.position, gameObject.transform.rotation);
         if (health == 0)
         {
             Die();

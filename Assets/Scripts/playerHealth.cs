@@ -11,6 +11,7 @@ public class playerHealth : MonoBehaviour
 
     public bool isPlayerAlive = true;
     public GameObject Deathscreen;
+    public GameObject deathParticle;
 
     public GameObject[] hearts;
 
@@ -31,6 +32,7 @@ public class playerHealth : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        Instantiate(deathParticle, gameObject.transform.position, gameObject.transform.rotation);
         health -= damage;
         hearts[health].SetActive(false);
 

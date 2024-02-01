@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
+  deathParticle: {fileID: 4310572275193259493, guid: c8c658c51afe84c4f8664f9cf4c71280, type: 3}
   isEnemyAlive: 1
 --- !u!114 &1070528376453456025
 MonoBehaviour:

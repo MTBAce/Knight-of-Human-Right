@@ -341,6 +341,7 @@ MonoBehaviour:
   animator: {fileID: 3446450796462361918}
   isPlayerAlive: 1
   Deathscreen: {fileID: 804038200132206293, guid: a6eaee5b384c88c4594bb5743097a764, type: 3}
+  deathParticle: {fileID: 4310572275193259493, guid: c8c658c51afe84c4f8664f9cf4c71280, type: 3}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
