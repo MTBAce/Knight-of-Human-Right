@@ -790,7 +790,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 234732277}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton3
+        m_MethodName: ChangeLevelMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1172,13 +1172,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d20ecb9da787647a8c9441ba00ffb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewGameLevel: Level1
-  NewGameLevel2: Level2
-  NewGameLevel0: MainMenu
-  NewGameLevel3: MainMenu
-  NewGameLevel4: Level4
-  NewGameLevel5: Intro
-  NewGameLevel6: WinScreen
+  Level1: Level1
+  Level2: Level2
+  MainMenu: MainMenu
+  Level3: Level3
+  Level4: Level4
+  Intro: Intro
+  WinScreen: WinScreen
 --- !u!4 &234732278
 Transform:
   m_ObjectHideFlags: 0
@@ -2041,7 +2041,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 234732277}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton1
+        m_MethodName: ChangeLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4726,7 +4726,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 234732277}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton3
+        m_MethodName: ChangeLevelMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5313,7 +5313,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 234732277}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton3
+        m_MethodName: ChangeLevelMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

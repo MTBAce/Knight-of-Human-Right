@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour
 {
-
+    public GameObject WinScreen;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Level2");
+            WinScreen.SetActive(true);
         }
     }
 } 

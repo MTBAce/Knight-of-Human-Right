@@ -8,7 +8,7 @@ public class ButtonUI : MonoBehaviour
 {
 
     [SerializeField]
-    private string NewGameLevel = "Level1", NewGameLevel2 = "Level2", NewGameLevel0 = "MainMenu", NewGameLevel3 = "Level3", NewGameLevel4 = "Level4", NewGameLevel5 = "Intro", NewGameLevel6 = "WinScreen";
+    private string Level1 = "Level1", Level2 = "Level2", MainMenu = "MainMenu", Level3 = "Level3", Level4 = "Level4", Intro = "Intro", WinScreen = "WinScreen";
 
 
     public void Restart()
@@ -16,34 +16,34 @@ public class ButtonUI : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void NewGameButton1()
+    public void ChangeLevel1()
     {
-        SceneManager.LoadScene(NewGameLevel);        
+        SceneManager.LoadScene(Level1);        
     }
 
-    public void NewGameButton2()
+    public void ChangeLevel2()
     {
-        SceneManager.LoadScene(NewGameLevel2);
+        SceneManager.LoadScene(Level2);
     }
 
-    public void NewGameButton0()
+    public void ChangeLevelMainMenu()
     {
-        SceneManager.LoadScene(NewGameLevel0);
+        SceneManager.LoadScene(MainMenu);
     }
-    public void NewGameButton3()
+    public void ChangeLevel3()
     {
-        SceneManager.LoadScene(NewGameLevel3);
+        SceneManager.LoadScene(Level3);
     }
-    public void NewGameButton4()
+    public void ChangeLevel4()
     {
-        SceneManager.LoadScene(NewGameLevel4);
+        SceneManager.LoadScene(Level4);
     }
-    public void NewGameButton5()
+    public void ChangeLevelIntro()
     {
-        SceneManager.LoadScene(NewGameLevel5);
+        SceneManager.LoadScene(Intro);
     }
-    public void NewGameButton6()
+    public void ChangeLevelWinScreen()
     {
-        SceneManager.LoadScene(NewGameLevel6);
+        SceneManager.LoadScene(WinScreen);
     }
 }
