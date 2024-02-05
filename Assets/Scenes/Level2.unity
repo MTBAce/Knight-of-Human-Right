@@ -42664,6 +42664,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21c1ad761a29f114893ad2cca9ea7d75, type: 3}
+--- !u!114 &1640133016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7981063493116863046, guid: 21c1ad761a29f114893ad2cca9ea7d75, type: 3}
+  m_PrefabInstance: {fileID: 1640133015}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640133017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8614a1bb946016e45abe1465ca909dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1640133017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6132933400699712951, guid: 21c1ad761a29f114893ad2cca9ea7d75, type: 3}
+  m_PrefabInstance: {fileID: 1640133015}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1653607294 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4424194962453956241, guid: 2122be2bb5bd9c844a66a32fcfb75313, type: 3}
@@ -42958,6 +42974,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a463e29847a644fb5cba15d12ce05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1640133017}
+  playerHealth: {fileID: 1640133016}
+  timerText: {fileID: 234733363}
+  currentTime: 0
 --- !u!4 &1924986665
 Transform:
   m_ObjectHideFlags: 0

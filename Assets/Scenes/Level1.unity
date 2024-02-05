@@ -24298,6 +24298,11 @@ Transform:
   - {fileID: 186082010}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2043486945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6132933400699712951, guid: 21c1ad761a29f114893ad2cca9ea7d75, type: 3}
+  m_PrefabInstance: {fileID: 468140662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2060529735 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4424194962453956241, guid: 2122be2bb5bd9c844a66a32fcfb75313, type: 3}
@@ -24308,7 +24313,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7981063493116863046, guid: 21c1ad761a29f114893ad2cca9ea7d75, type: 3}
   m_PrefabInstance: {fileID: 468140662}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2043486945}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8614a1bb946016e45abe1465ca909dbb, type: 3}
@@ -24559,6 +24564,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a463e29847a644fb5cba15d12ce05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2043486945}
+  playerHealth: {fileID: 2078364842}
+  timerText: {fileID: 4176044132673280879}
+  currentTime: 0
 --- !u!1 &3627393959459973755
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,6 +37,7 @@ public class timerManager : MonoBehaviour
         if (playerHealth.isPlayerAlive == false)
         {
             counting = false;
+            SetTimerText(currentTime);
         }
     }
 
