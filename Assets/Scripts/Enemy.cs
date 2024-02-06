@@ -17,8 +17,6 @@ public class EnemyHealth : MonoBehaviour
 
     Animator animator;
 
-    private bool hasCollided = false;
-
     private void Start()
     {
         animator = GetComponent<Animator>();

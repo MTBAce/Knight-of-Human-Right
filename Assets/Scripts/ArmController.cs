@@ -12,9 +12,6 @@ public class ArmController : MonoBehaviour
     public GameObject player;
     public playerHealth playerHealth;
 
-    public float swordBlockDelay = 2.5f;
-    public float timeSinceLastBlock = 0.0f;
-
     public bool isUsingSword;
     public bool isUsingCrossbow;
 
@@ -56,15 +53,15 @@ public class ArmController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        timeSinceLastBlock += Time.deltaTime; //The time since the last sword block
+ 
 
-        if (Input.GetKey(KeyCode.Mouse1) && timeSinceLastBlock >= swordBlockDelay) //Use Sword
+        if (Input.GetKey(KeyCode.Mouse1)) //Use Sword
         {
             isUsingSword = true;
             isUsingCrossbow = false;
             UsingSword();
 
-            timeSinceLastBlock = 0.0f;
+            
         }
         else
         {

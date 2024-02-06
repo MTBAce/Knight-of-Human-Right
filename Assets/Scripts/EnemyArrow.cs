@@ -26,7 +26,6 @@ public class EnemyArrow : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
-        playerSword = GameObject.FindGameObjectWithTag("Sword");
 
         Vector3 direction = player.transform.position - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
@@ -57,11 +56,6 @@ public class EnemyArrow : MonoBehaviour
                 player.TakeDamage(damage);
             }
             Destroy(gameObject);
-        }
-       if (collision.collider.gameObject.tag == "Sword")
-        {
-            Debug.Log("Blocked");
-            hasCollided = true;
         }
         
         
