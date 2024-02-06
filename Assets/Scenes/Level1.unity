@@ -8299,7 +8299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1514363512}
   m_Layer: 5
-  m_Name: Meny
+  m_Name: OptionsMeny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

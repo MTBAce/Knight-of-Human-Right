@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959137699}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton1
+        m_MethodName: ChangeLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -875,7 +875,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959137699}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton5
+        m_MethodName: ChangeLevelIntro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1008,7 +1008,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959137699}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton2
+        m_MethodName: ChangeLevel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1141,7 +1141,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959137699}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton3
+        m_MethodName: ChangeLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1274,7 +1274,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959137699}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton3
+        m_MethodName: ChangeLevelMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2853,7 +2853,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 959137699}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-        m_MethodName: NewGameButton4
+        m_MethodName: ChangeLevel4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
