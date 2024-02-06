@@ -10,8 +10,13 @@ public class ArmController : MonoBehaviour
     public float maxRotation = 80f;
 
     public GameObject player;
-
     public playerHealth playerHealth;
+
+    public bool isUsingSword;
+    public bool isUsingCrossbow;
+
+    public GameObject crossbow;
+    public GameObject sword;
 
 
     private void Start()
@@ -20,6 +25,7 @@ public class ArmController : MonoBehaviour
     }
     void Update()
     {
+       
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 armPosition = transform.position;
         mousePosition.z = armPosition.z; // Ensure the z-axis is consistent
@@ -46,6 +52,30 @@ public class ArmController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (Input.GetKey(KeyCode.Q)) //Use Sword
+        {
+            isUsingSword = true;
+            isUsingCrossbow = false;
+            UsingSword();
 
+        }
+        else if (Input.GetKey(KeyCode.E)) //Use Crossbow
+        {
+            isUsingCrossbow = true;
+            isUsingSword = false;
+            UsingCrossbow();
+        }
+
+        void UsingSword()
+        {
+            crossbow.SetActive(false);
+            sword.SetActive(true);
+        }
+
+        void UsingCrossbow()
+        {
+            crossbow.SetActive(true);
+            sword.SetActive(false);
+        }
     }
 }
