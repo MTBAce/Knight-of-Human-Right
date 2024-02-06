@@ -80,6 +80,9 @@ MonoBehaviour:
   arrowSpeed: 19
   shootDelay: 0.5
   timeSinceLastShoot: 0
+  player: {fileID: 6132933400699712951}
+  armController: {fileID: 8329851593971812451}
+  isUsingCrossbow: 0
 --- !u!1 &5618632558673450011
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,12 +94,12 @@ GameObject:
   - component: {fileID: 4091114548499736511}
   - component: {fileID: 1196150798751635156}
   m_Layer: 0
-  m_Name: Arm + crossbow
+  m_Name: Arm_crossbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4091114548499736511
 Transform:
   m_ObjectHideFlags: 0
@@ -153,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 70fdb218fdd9f6e428e72fc60a8535b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -176,7 +179,7 @@ GameObject:
   - component: {fileID: 2107596205876033711}
   - component: {fileID: 8329851593971812451}
   m_Layer: 0
-  m_Name: Armpivot
+  m_Name: ArmController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,8 +220,8 @@ MonoBehaviour:
   playerHealth: {fileID: 7981063493116863046}
   isUsingSword: 0
   isUsingCrossbow: 0
-  crossbow: {fileID: 0}
-  sword: {fileID: 0}
+  crossbow: {fileID: 5618632558673450011}
+  sword: {fileID: 6066677094783283963}
 --- !u!1 &6066677094783283963
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,8 +232,10 @@ GameObject:
   m_Component:
   - component: {fileID: 513430034567942235}
   - component: {fileID: 3911785103922218571}
+  - component: {fileID: 921575795218552703}
+  - component: {fileID: 5032944572299207161}
   m_Layer: 0
-  m_Name: "Arm_sv\xE4rd"
+  m_Name: Arm_sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,7 +296,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: badb32dfce33e044f96f01c981168249, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -303,6 +308,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &921575795218552703
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6066677094783283963}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.41, y: 0.49}
+    newSize: {x: 0.41, y: 0.49}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.18055034, y: 0.24205089}
+      - {x: 0.10760115, y: 0.11306963}
+      - {x: -0.03230936, y: -0.14321041}
+      - {x: -0.07524085, y: -0.20794897}
+      - {x: -0.0788234, y: -0.20635691}
+      - {x: -0.0883472, y: -0.22920258}
+      - {x: -0.095, y: -0.24499999}
+      - {x: -0.0075430786, y: -0.22245683}
+      - {x: 0.04279545, y: -0.14855911}
+      - {x: 0.20822048, y: 0.18839315}
+      - {x: 0.205, y: 0.24499999}
+  m_UseDelaunayMesh: 0
+--- !u!114 &5032944572299207161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6066677094783283963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32a5b9025b357a4f85d1e1c9dbaefff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6132933400699712951}
+  armController: {fileID: 8329851593971812451}
+  enemyHealth: {fileID: 7818485532315669938, guid: a04a12fed55c4174d9a0bd49bad2d54c, type: 3}
+  isTouchingEnemy: 0
+  damage: 3
+  enemy: {fileID: 0}
 --- !u!1 &6132933400699712951
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3446450796462361918}
   isPlayerAlive: 1
-  Deathscreen: {fileID: 804038200132206293, guid: a6eaee5b384c88c4594bb5743097a764, type: 3}
+  Deathscreen: {fileID: 0}
   deathParticle: {fileID: 0}
   hearts:
   - {fileID: 0}

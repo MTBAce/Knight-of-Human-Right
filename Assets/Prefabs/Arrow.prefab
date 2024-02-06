@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 40
   bulletPrefab: {fileID: 5288013123205516826}
-  damage: 10
+  damage: 1

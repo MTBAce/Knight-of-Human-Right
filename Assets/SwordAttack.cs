@@ -8,38 +8,53 @@ public class SwordAttack : MonoBehaviour
     public GameObject player;
     public ArmController armController;
 
-    public bool isUsingSword;
-    public int swordDamage = 3;
+    public EnemyHealth enemyHealth;
+    public bool isTouchingEnemy;
+
+    public int damage = 10;
 
     public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        isUsingSword = player.GetComponent<ArmController>();
-        EnemyHealth enemy = gameObject.GetComponent<EnemyHealth>();
+        enemyHealth = enemy.GetComponent<EnemyHealth>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && isUsingSword == true && collision.gameObject.tag == "Enemy")
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-           
-            if (enemy != null)
+
+            if (isTouchingEnemy == true)
             {
-                enemy.TakeDamage(swordDamage);
+                Debug.Log("Attacked Enemy");
+                enemyHealth.TakeDamage(damage);
                 Debug.Log("Enemy hit");
             }
+            else
+            {
+                Debug.Log("Sword attack");
+            }
         }
-
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            isTouchingEnemy = true;
+        }
+    }
 
-        Debug.Log("Touching Enemy");
-       
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            isTouchingEnemy = false;
+        }
     }
 
 }

@@ -42,7 +42,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-
+        col.enabled = false;
         isEnemyAlive = false;
         animator.SetTrigger("death");
         StartCoroutine(DieCoroutine());

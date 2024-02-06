@@ -8,6 +8,7 @@ using UnityEngine;
 public class EnemyArrow : MonoBehaviour
 {
     public GameObject player;
+    public GameObject playerSword;
     private Rigidbody2D rb;
     public float force;
     private float timer;
@@ -25,6 +26,7 @@ public class EnemyArrow : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        playerSword = GameObject.FindGameObjectWithTag("Sword");
 
         Vector3 direction = player.transform.position - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
@@ -47,15 +49,18 @@ public class EnemyArrow : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.collider.gameObject.tag == "Player")
         {
             playerHealth player = collision.gameObject.GetComponent<playerHealth>();
             if (player != null)
             {
                 player.TakeDamage(damage);
             }
-
             Destroy(gameObject);
+        }
+        if (collision.collider.gameObject.tag == "Sword")
+        {
+            Debug.Log("Blocked");
         }
         
         

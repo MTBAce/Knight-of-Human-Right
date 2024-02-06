@@ -38,14 +38,8 @@ public class Arrow : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            
-           
             EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
-
+            enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
        
