@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 5032944572299207161}
   m_Layer: 0
   m_Name: Arm_sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,9 +359,10 @@ PolygonCollider2D:
       - {x: -0.0788234, y: -0.20635691}
       - {x: -0.0883472, y: -0.22920258}
       - {x: -0.095, y: -0.24499999}
-      - {x: -0.0075430786, y: -0.22245683}
-      - {x: 0.04279545, y: -0.14855911}
-      - {x: 0.20822048, y: 0.18839315}
+      - {x: -0.02302756, y: -0.25128755}
+      - {x: 0.16081457, y: -0.24290182}
+      - {x: 0.25533903, y: 0.23399924}
+      - {x: 0.2199005, y: 0.24260396}
       - {x: 0.205, y: 0.24499999}
   m_UseDelaunayMesh: 0
 --- !u!114 &5032944572299207161
@@ -381,7 +382,6 @@ MonoBehaviour:
   enemyHealth: {fileID: 7818485532315669938, guid: a04a12fed55c4174d9a0bd49bad2d54c, type: 3}
   isTouchingEnemy: 0
   damage: 3
-  enemy: {fileID: 0}
 --- !u!1 &6132933400699712951
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +481,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0019837618, y: 0.0072562546}
+  m_Offset: {x: -0.024072498, y: 0.0072562695}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -492,7 +492,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3506593, y: 0.8897265}
+  m_Size: {x: 0.2985468, y: 0.8897265}
   m_EdgeRadius: 0
 --- !u!114 &7981063493116863046
 MonoBehaviour:
@@ -509,7 +509,7 @@ MonoBehaviour:
   animator: {fileID: 3446450796462361918}
   isPlayerAlive: 1
   Deathscreen: {fileID: 0}
-  deathParticle: {fileID: 0}
+  deathParticle: {fileID: 4310572275193259493, guid: c8c658c51afe84c4f8664f9cf4c71280, type: 3}
   hearts:
   - {fileID: 0}
   - {fileID: 0}

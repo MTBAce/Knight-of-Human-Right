@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-//Alexis
+//Alexis, Elliott
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
 
         Instantiate(deathParticle, gameObject.transform.position, gameObject.transform.rotation);
-        if (health == 0)
+        if (health <= 0)
         {
             Die();
         }
@@ -42,8 +42,6 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        col.enabled = false;
-        isEnemyAlive = false;
         animator.SetTrigger("death");
         StartCoroutine(DieCoroutine());
  

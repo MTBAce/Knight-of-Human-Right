@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Elliott med hjälp av Hampus CS 
+//Elliott
 
 public class ArmController : MonoBehaviour
 {
@@ -11,6 +11,9 @@ public class ArmController : MonoBehaviour
 
     public GameObject player;
     public playerHealth playerHealth;
+
+    public float swordBlockDelay = 2.5f;
+    public float timeSinceLastBlock = 0.0f;
 
     public bool isUsingSword;
     public bool isUsingCrossbow;
@@ -25,10 +28,11 @@ public class ArmController : MonoBehaviour
     }
     void Update()
     {
+
        
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 armPosition = transform.position;
-        mousePosition.z = armPosition.z; // Ensure the z-axis is consistent
+        mousePosition.z = armPosition.z; 
 
         Vector3 difference = mousePosition - armPosition;
         difference.Normalize();
@@ -41,9 +45,9 @@ public class ArmController : MonoBehaviour
         }
         else
         {
-            // When facing left, we need to adjust the rotation and potentially flip the arm sprite
+            
             rotationZ = Mathf.Atan2(-difference.y, -difference.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(180f, 180f, rotationZ); // Flip the arm by rotating around the y-axis
+            transform.rotation = Quaternion.Euler(180f, 180f, rotationZ); 
           
         }
 
@@ -52,30 +56,32 @@ public class ArmController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (Input.GetKey(KeyCode.Q)) //Use Sword
+        timeSinceLastBlock += Time.deltaTime; //The time since the last sword block
+
+        if (Input.GetKey(KeyCode.Mouse1) && timeSinceLastBlock >= swordBlockDelay) //Use Sword
         {
             isUsingSword = true;
             isUsingCrossbow = false;
             UsingSword();
 
+            timeSinceLastBlock = 0.0f;
         }
-        else if (Input.GetKey(KeyCode.E)) //Use Crossbow
+        else
         {
             isUsingCrossbow = true;
             isUsingSword = false;
             UsingCrossbow();
         }
+    }
+    void UsingSword()
+    {
+        crossbow.SetActive(false);
+        sword.SetActive(true);
+    }
 
-        void UsingSword()
-        {
-            crossbow.SetActive(false);
-            sword.SetActive(true);
-        }
-
-        void UsingCrossbow()
-        {
-            crossbow.SetActive(true);
-            sword.SetActive(false);
-        }
+    void UsingCrossbow()
+    {
+        crossbow.SetActive(true);
+        sword.SetActive(false);
     }
 }

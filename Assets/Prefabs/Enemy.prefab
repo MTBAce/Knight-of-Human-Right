@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyArrow: {fileID: 2898428327818340108, guid: d42ebf743336fa047a8cb56acb4ee28e, type: 3}
   FirePoint: {fileID: 811817549763469595}
-  playerHealth: {fileID: 7981063493116863046, guid: 21c1ad761a29f114893ad2cca9ea7d75, type: 3}
+  playerHealth: {fileID: 0}
   enemyHealth: {fileID: 7818485532315669938}
   shootDist: 20
 --- !u!95 &5759782749922319290

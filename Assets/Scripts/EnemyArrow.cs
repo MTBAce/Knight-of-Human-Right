@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-//Alexis och Elliott
+//Alexis, Elliott
 
 public class EnemyArrow : MonoBehaviour
 {
@@ -49,7 +49,7 @@ public class EnemyArrow : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.tag == "Player")
+        if (collision.collider.gameObject.tag == "Player" && hasCollided == false)
         {
             playerHealth player = collision.gameObject.GetComponent<playerHealth>();
             if (player != null)
@@ -58,9 +58,10 @@ public class EnemyArrow : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        if (collision.collider.gameObject.tag == "Sword")
+       if (collision.collider.gameObject.tag == "Sword")
         {
             Debug.Log("Blocked");
+            hasCollided = true;
         }
         
         
