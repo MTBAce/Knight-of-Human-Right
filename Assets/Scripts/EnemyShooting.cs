@@ -35,7 +35,7 @@ public class EnemyShooting : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        if(distance < shootDist && playerHealth.isPlayerAlive && enemyHealth.isEnemyAlive == true)
+        if (distance < shootDist && playerHealth.isPlayerAlive && enemyHealth.isEnemyAlive == true)
         {
             timer += Time.deltaTime;
 
@@ -46,14 +46,14 @@ public class EnemyShooting : MonoBehaviour
             }
         }
 
-        if((player.transform.position.x > transform.position.x && !isFacingRight) || (player.transform.position.x < transform.position.x && isFacingRight))
+        if ((player.transform.position.x > transform.position.x && !isFacingRight) || (player.transform.position.x < transform.position.x && isFacingRight))
         {
             Flip();
         }
-                
-    
+
+
     }
-        
+
     void shoot()
     {
         Instantiate(EnemyArrow, FirePoint.position, Quaternion.identity);
@@ -61,7 +61,7 @@ public class EnemyShooting : MonoBehaviour
 
     void Flip()
     {
-        isFacingRight= !isFacingRight;
+        isFacingRight = !isFacingRight;
         transform.Rotate(0, 180, 0);
 
     }

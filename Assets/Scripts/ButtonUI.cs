@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+//GUSTAV
 public class ButtonUI : MonoBehaviour  
 {
 
     [SerializeField]
-    private string Level1 = "Level1", Level2 = "Level2", MainMenu = "MainMenu", Level3 = "Level3", Level4 = "Level4", Intro = "Intro", WinScreen = "WinScreen";
+    private string Level1 = "Level1", Level2 = "Level2", MainMenu = "MainMenu", Level3 = "Level3", Level4 = "Level4", Intro = "Intro", WinScreen = "WinScreen", Credits = "Credits";
 
 
     public void Restart()
@@ -45,5 +45,9 @@ public class ButtonUI : MonoBehaviour
     public void ChangeLevelWinScreen()
     {
         SceneManager.LoadScene(WinScreen);
+    }
+    public void ChangeLevelCredits()
+    {
+        SceneManager.LoadScene(Credits);
     }
 }
