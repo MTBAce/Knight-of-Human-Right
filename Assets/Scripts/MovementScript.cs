@@ -11,6 +11,7 @@ public class Movementscript : MonoBehaviour
     public float jumpingPower = 10;
     public float speed = 0f;
     public bool isFacingRight = true;
+    public bool playerWon = false;
 
     public GameObject player;
 
@@ -107,6 +108,11 @@ public class Movementscript : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
 
+        }
+
+        if (collision.gameObject.CompareTag("Win"))
+        {
+            playerWon = true;
         }
     }
     

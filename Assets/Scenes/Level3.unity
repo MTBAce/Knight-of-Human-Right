@@ -26022,9 +26022,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1525134932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 293eb69dfa6867d4a92ffc0de40f46d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b94e7c9d18a4b594088167909655b675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerWon: 0
   WinScreen: {fileID: 864650484}
 --- !u!61 &1525134934
 BoxCollider2D:
@@ -26600,6 +26601,7 @@ MonoBehaviour:
   player: {fileID: 377252409}
   playerHealth: {fileID: 1941512523}
   timerText: {fileID: 556634198}
+  finalTime: {fileID: 0}
   currentTime: 0
 --- !u!4 &1571136022
 Transform:

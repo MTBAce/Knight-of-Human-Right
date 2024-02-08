@@ -1,15 +1,18 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//GUSTAV
 public class Win : MonoBehaviour
 {
     public GameObject WinScreen;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
+        if (other.CompareTag("Player")) 
+        { 
+        
             WinScreen.SetActive(true);
         }
     }

@@ -72,6 +72,10 @@ public class EnemyArrow : MonoBehaviour
             col.enabled = false;
 
         }
+        else if (collision.collider.gameObject.tag == "Sword")
+        {
+            hasCollided = true;
+        }
     }
 
 

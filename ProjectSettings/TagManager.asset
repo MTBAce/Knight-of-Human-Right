@@ -9,6 +9,7 @@ TagManager:
   - EnemyArrow
   - PlayerArrow
   - Sword
+  - Win
   layers:
   - Default
   - TransparentFX
