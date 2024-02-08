@@ -12,6 +12,7 @@ public class timerManager : MonoBehaviour
     public playerHealth playerHealth;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI finalTime;
+    public GameObject timeObject;
     private bool counting = true;
     public float currentTime;
 
@@ -36,7 +37,7 @@ public class timerManager : MonoBehaviour
         if (playerHealth.isPlayerAlive == false)
         {
             counting = false;
-            SetTimerText(currentTime);
+            timeObject.SetActive(false);
         }
     }
 

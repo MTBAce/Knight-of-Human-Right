@@ -40,6 +40,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        isEnemyAlive = false;
         animator.SetTrigger("death");
         StartCoroutine(DieCoroutine());
  
