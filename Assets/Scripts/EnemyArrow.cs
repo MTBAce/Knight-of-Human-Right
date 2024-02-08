@@ -30,7 +30,7 @@ public class EnemyArrow : MonoBehaviour
         
         Vector3 direction = player.transform.position - transform.position;
         //Slumpmässiga pilar
-        rb.velocity = new Vector2(direction.x, direction.y + Random.Range(-5f, 5f)).normalized * force;
+        rb.velocity = new Vector2(direction.x, direction.y + Random.Range(-3f, 3f)).normalized * force;
         
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot);   
