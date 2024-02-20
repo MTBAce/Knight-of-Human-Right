@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Alexis och Elliott
+//Alexis, Elliott
 
 public class EnemyShooting : MonoBehaviour
 {

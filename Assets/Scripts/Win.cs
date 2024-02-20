@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Gustav och Elliott
+//Gustav, Elliott
 public class Win : MonoBehaviour
 {
     public GameObject WinScreen;
